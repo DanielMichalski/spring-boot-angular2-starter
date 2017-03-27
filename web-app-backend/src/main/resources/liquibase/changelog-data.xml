@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd"
+                   logicalFilePath="web-app-backend/changelog-data">
+
+    <changeSet author="dmichalski" id="insert-data-to-web-user" runOnChange="true">
+        <loadUpdateData
+            file="data/web-user.csv"
+            tableName="web_user"
+            primaryKey="id"
+            relativeToChangelogFile="true"
+            separator=";"
+            encoding="UTF-8"/>
+    </changeSet>
+
+</databaseChangeLog>
