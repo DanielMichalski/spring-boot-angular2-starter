@@ -1,5 +1,5 @@
 .idea/
-backend/target
-frontend/target
+web-app-backend/target
+web-app-frontend/target
 *.iml
 frontend/node_modules/
