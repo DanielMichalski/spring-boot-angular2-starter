@@ -17,8 +17,8 @@
     </parent>
 
     <modules>
-        <module>backend</module>
-        <module>frontend</module>
+        <module>web-app-backend</module>
+        <module>web-app-frontend</module>
     </modules>
 
 </project>

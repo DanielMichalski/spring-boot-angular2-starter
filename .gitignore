@@ -2,3 +2,4 @@
 backend/target
 frontend/target
 *.iml
+frontend/node_modules/
