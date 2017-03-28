@@ -15,4 +15,25 @@
             encoding="UTF-8"/>
     </changeSet>
 
+    <changeSet author="dmichalski" id="insert-data-to-role" runOnChange="true">
+        <loadUpdateData
+                file="data/role.csv"
+                tableName="role"
+                primaryKey="id"
+                relativeToChangelogFile="true"
+                separator=";"
+                encoding="UTF-8"/>
+    </changeSet>
+
+    <changeSet author="dmichalski" id="insert-data-web-user-x-role" runOnChange="true">
+        <loadData
+                file="data/web-user-x-role.csv"
+                tableName="web_user_x_role"
+                relativeToChangelogFile="true"
+                separator=";"
+                encoding="UTF-8">
+            <column name="role_id" type="COMPUTED"/>
+        </loadData>
+    </changeSet>
+
 </databaseChangeLog>

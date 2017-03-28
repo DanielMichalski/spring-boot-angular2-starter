@@ -14,4 +14,26 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="dmichalski" id="create-table-role">
+        <createTable tableName="role">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(100)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="dmichalski" id="create-table-web-user-x-role">
+        <createTable tableName="web_user_x_role">
+            <column name="user_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_web_user_id"
+                             references="web_user(id)"/>
+            </column>
+            <column name="role_id" type="int">
+                <constraints nullable="false" foreignKeyName="fk_role_id"
+                             references="role(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>

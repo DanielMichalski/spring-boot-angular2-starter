@@ -1,0 +1,5 @@
+user_id;role_id
+1;(select id from role where name = 'admin')
+1;(select id from role where name = 'user')
+2;(select id from role where name = 'admin')
+3;(select id from role where name = 'user')
