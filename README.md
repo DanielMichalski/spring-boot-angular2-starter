@@ -1,5 +1,5 @@
 Spring Boot & Angular2 Starter
----------------------------------------------
+-
 
 This project is Spring Boot & Angular2 starter application.
 
