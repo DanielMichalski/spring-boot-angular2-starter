@@ -1,18 +1,17 @@
 package pl.dmichalski.backend.domain.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import java.util.Set;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import pl.dmichalski.backend.util.EntityConstants;
 
 @Entity
 @Table(name = "web_user")
@@ -21,9 +20,8 @@ import java.util.Set;
 public class User {
 
     @Id
-    @SequenceGenerator(name="web_user_id_seq", sequenceName="web_user_id_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE ,generator="web_user_id_seq")
-    private Integer id;
+    @GeneratedValue(generator = EntityConstants.ID_GENERATOR_NAME)
+    private Long id;
 
     private String firstName;
     private String lastName;

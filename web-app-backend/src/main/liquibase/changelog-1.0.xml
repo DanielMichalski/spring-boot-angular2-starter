@@ -6,30 +6,34 @@
 
     <changeSet author="dmichalski" id="create-table-web-user">
         <createTable tableName="web_user">
-            <column name="id" type="int" autoIncrement="true">
+            <column name="id" type="BIGINT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="first_name" type="varchar(100)"/>
             <column name="last_name" type="varchar(100)"/>
         </createTable>
+
+        <createSequence sequenceName="user_seq"/>
     </changeSet>
 
     <changeSet author="dmichalski" id="create-table-role">
         <createTable tableName="role">
-            <column name="id" type="int" autoIncrement="true">
+            <column name="id" type="BIGINT">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(100)"/>
         </createTable>
+
+        <createSequence sequenceName="role_seq"/>
     </changeSet>
 
     <changeSet author="dmichalski" id="create-table-web-user-x-role">
         <createTable tableName="web_user_x_role">
-            <column name="user_id" type="int">
+            <column name="user_id" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="fk_web_user_id"
                              references="web_user(id)"/>
             </column>
-            <column name="role_id" type="int">
+            <column name="role_id" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="fk_role_id"
                              references="role(id)"/>
             </column>

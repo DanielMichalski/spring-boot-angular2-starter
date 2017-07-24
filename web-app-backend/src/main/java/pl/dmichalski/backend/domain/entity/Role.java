@@ -1,21 +1,19 @@
 package pl.dmichalski.backend.domain.entity;
 
-import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+
+import lombok.Data;
+import pl.dmichalski.backend.util.EntityConstants;
 
 @Entity
 @Data
 public class Role {
 
     @Id
-    @SequenceGenerator(name="role_id_seq", sequenceName="role_id_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE ,generator="role_id_seq")
-    private Integer id;
+    @GeneratedValue(generator = EntityConstants.ID_GENERATOR_NAME)
+    private Long id;
 
     private String name;
 

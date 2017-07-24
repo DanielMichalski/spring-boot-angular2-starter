@@ -84,7 +84,7 @@
                         <artifactId>liquibase-maven-plugin</artifactId>
                         <version>${liquibase-maven-plugin.version}</version>
                         <configuration>
-                            <changeLogFile>src/main/resources/liquibase/changelog-master.xml</changeLogFile>
+                            <changeLogFile>src/main/liquibase/changelog-master.xml</changeLogFile>
                             <driver>${spring.datasource.driver-class-name}</driver>
                             <url>${spring.datasource.url}</url>
                             <username>${spring.datasource.username}</username>
